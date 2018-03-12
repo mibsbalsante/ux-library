@@ -6,6 +6,7 @@ import Results from './views/Results.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -17,6 +18,10 @@ export default new Router({
       name: 'results',
       component: Results,
       props: true
+    },
+    {
+      path: '*',
+      component: Home
     }
   ]
 })

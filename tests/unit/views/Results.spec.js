@@ -1,5 +1,6 @@
 import { expect } from 'chai'
 import { shallow } from '@vue/test-utils'
+import apiLink from '@/commom/api-link'
 import Results from '@/views/Results.vue'
 
 describe('views/Results.vue', () => {
@@ -21,5 +22,10 @@ describe('views/Results.vue', () => {
       }
     })
     expect(wrapper.vm.$route.path).to.equal($route.path)
+  })
+
+  it('renders api link', () => {
+    const wrapper = shallow(Results)
+    expect(wrapper.vm.apiLink).to.equal(apiLink)
   })
 })

@@ -10,4 +10,16 @@ describe('views/Results.vue', () => {
     })
     expect(wrapper.props().search).to.equal(search)
   })
+
+  it('renders route path', () => {
+    const $route = {
+      path: '/results/text'
+    }
+    const wrapper = shallow(Results, {
+      mocks: {
+        $route
+      }
+    })
+    expect(wrapper.vm.$route.path).to.equal($route.path)
+  })
 })

@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     generateUsersData (pictures) {
-      const uniqueUsers = 
+      const uniqueUsers =
         this.apiResults
           .map(post => post.meta.author)
           .filter((item, ind, self) => self.indexOf(item) === ind)
@@ -67,8 +67,7 @@ export default {
   },
   watch: {
     apiResults (val) {
-      if(val)
-        this.getRandomPictures(val.length)
+      if (val) this.getRandomPictures(val.length)
     }
   },
   components: { Post },

@@ -1,9 +1,27 @@
-$primary: #E3472F;
-$text: #363636;
-$grey1: #F0F0F0;
-$grey2: #CACACA;
+@import 'settings';
 
-$tag-product-design: #00E2AD;
-$tag-ux-theory: #00BBFF;
-$tag-opinion: #4271D6;
-$tag-case-study: #F4973C;
+body {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  min-height: 100vh;
+}
+#app {
+  font-family: 'Yantramanav', Helvetica, sans-serif;
+  font-size: 15px;
+  color: $text;
+  max-width: 850px;
+  padding: 0 25px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: $primary;
+  }
+
+  a,
+  button {
+    outline: 0 none;
+  }
+}

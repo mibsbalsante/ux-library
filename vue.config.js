@@ -11,7 +11,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         includePaths: [ path.resolve('./src/assets') ],
-        data: `@import "~${path.resolve('./src/assets/app')}";`
+        data: `@import "~${path.resolve('./src/assets/settings')}";`
       }
     }
   }

@@ -13,26 +13,7 @@ export default {
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Yantramanav');
-</style> 
-
 <style lang="scss">
-#app {
-  font-family: 'Yantramanav', Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $text;
-  max-width: 900px;
-  margin: 0 auto;
-
-  a {
-    color: $primary;
-  }
-
-  a,
-  button {
-    outline: 0 none;
-  }
-}
-</style>
+@import url('https://fonts.googleapis.com/css?family=Yantramanav');
+@import '/assets/app';
+</style> 

@@ -4,22 +4,25 @@
     <post v-else
           v-for="details in filteredResults"
           :key="details.meta.title"
-          :details="details">
+          :details="details"
+          :picture="usersData[details.meta.author]">
     </post>
   </main>
 </template>
 
 <script>
 import apiLink from '@/commom/api-link'
+import picturesLink from '@/commom/pictures-link'
 import Post from '@/components/Post.vue'
 
 export default {
   props: ['search'],
   data () {
     return {
-      inputText: '',
       apiLink: apiLink,
-      apiResults: []
+      apiResults: [],
+      inputText: '',
+      usersData: {}
     }
   },
   computed: {
@@ -41,10 +44,31 @@ export default {
     }
   },
   methods: {
+    generateUsersData (pictures) {
+      const uniqueUsers = 
+        this.apiResults
+          .map(post => post.meta.author)
+          .filter((item, ind, self) => self.indexOf(item) === ind)
+      this.usersData = uniqueUsers.reduce((res, item, ind) => {
+        res[item] = pictures[ind].picture.thumbnail
+        return res
+      }, {})
+    },
+    getRandomPictures (count) {
+      fetch(picturesLink(count))
+        .then(dt => dt.json())
+        .then(json => this.generateUsersData(json.results))
+    },
     getResultsFromApi () {
       fetch(apiLink)
         .then(dt => dt.json())
         .then(json => { this.apiResults = json.links })
+    }
+  },
+  watch: {
+    apiResults (val) {
+      if(val)
+        this.getRandomPictures(val.length)
     }
   },
   components: { Post },

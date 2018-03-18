@@ -1,18 +1,20 @@
 <template>
   <main>
     <p v-if="filteredResults.length === 0" class="empty">Nothing found</p>
-    <post v-else
+    <post v-if="filteredResults.length > 0"
           v-for="details in filteredResults"
           :key="details.meta.title"
           :details="details"
           :picture="usersData[details.meta.author]">
     </post>
+    <load-more v-if="filteredResults.length > 0"></load-more>
   </main>
 </template>
 
 <script>
 import apiLink from '@/commom/api-link'
 import picturesLink from '@/commom/pictures-link'
+import LoadMore from '@/components/LoadMore.vue'
 import Post from '@/components/Post.vue'
 
 export default {
@@ -70,7 +72,10 @@ export default {
       if (val) this.getRandomPictures(val.length)
     }
   },
-  components: { Post },
+  components: {
+    LoadMore,
+    Post
+  },
   mounted () {
     this.getResultsFromApi()
   }

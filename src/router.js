@@ -4,19 +4,33 @@ import Results from './views/Results.vue'
 
 Vue.use(Router)
 
+const results = {
+  component: Results,
+  props: true
+}
+
 export default new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
       component: Results
     },
     {
       path: '/results/:search',
-      name: 'results',
-      component: Results,
-      props: true
+      ...results
+    },
+    {
+      path: '/popularity/:upvotes',
+      ...results
+    },
+    {
+      path: '/date/:created_at',
+      ...results
+    },
+    {
+      path: '/comments/:comments',
+      ...results
     },
     {
       path: '*',

@@ -11,7 +11,7 @@
         <i class="fa fa-search"></i>
       </button>
       <input type="text"
-              class="header_search_input" 
+              class="header_search_input"
               :value="searchText"
               @input="filterText($event.target.value)">
     </div>
@@ -36,7 +36,7 @@ export default {
   methods: {
     filterText (val) {
       this.searchText = undefined
-      this.searchText = val.replace(/[\\\/]/g, '')
+      this.searchText = val.replace(/\/\\/g, '')
     }
   },
   watch: {

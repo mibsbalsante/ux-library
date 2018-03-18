@@ -1,18 +1,18 @@
 <template>
-  <a :href="details.meta.url" class="post">
+  <div class="post">
     <div class="post_upvotes">
-      <button>up</button>
+      <button><i class="fa fa-angle-up"></i></button>
       <div class="post_upvotes_amount">{{ details.upvotes }}</div>
     </div>
-    <div class="post_font">{{ details.meta.url }}</div>
+    <a :href="details.meta.url" class="post_font">{{ details.meta.url }}</a>
     <div class="post_title">{{ details.meta.title }}</div>
     <div class="post_info">
       <span :class="`post_info_category label_${details.category}`">{{ details.category }}</span>
-      <span>{{ details.meta.author }}</span>
-      <span>{{ details.created_at }}</span>
-      <span>{{ details.comments }}</span>
+      <a href="#">{{ details.meta.author }}</a>
+      <span class="post_info_date">{{ details.created_at }}</span>
+      <a href="#" class="post_info_comments"><i class="fa fa-comment"></i> {{ details.comments }} comments</a>
     </div>
-  </a>
+  </div>
 </template>
 
 <script>

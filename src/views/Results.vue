@@ -1,12 +1,12 @@
 <template>
   <main>
-    <list></list>
+    <post v-for="details in apiResults.links" :key="details.meta.title" :details="details"></post>
   </main>
 </template>
 
 <script>
 import apiLink from '@/commom/api-link'
-import List from '@/components/List.vue'
+import Post from '@/components/Post.vue'
 
 export default {
   props: ['search'],
@@ -29,7 +29,7 @@ export default {
         .then(json => { this.apiResults = json })
     }
   },
-  components: { List },
+  components: { Post },
   mounted () {
     this.getResultsFromApi()
   }

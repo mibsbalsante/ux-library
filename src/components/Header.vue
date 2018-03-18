@@ -10,7 +10,10 @@
       <button class="header_search_button">
         <i class="fa fa-search"></i>
       </button>
-      <input type="text" class="header_search_input">
+      <input type="text"
+              class="header_search_input" 
+              :value="searchText"
+              @input="filterText($event.target.value)">
     </div>
     <div class="header_user">
       <button class="header_addpost">
@@ -22,3 +25,24 @@
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      searchText: ''
+    }
+  },
+  methods: {
+    filterText (val) {
+      this.searchText = undefined
+      this.searchText = val.replace(/[\\\/]/g, '')
+    }
+  },
+  watch: {
+    searchText (val) {
+      this.$router.push(`/${val}`)
+    }
+  }
+}
+</script>

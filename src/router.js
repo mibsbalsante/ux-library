@@ -14,11 +14,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Results
-    },
-    {
-      path: '/results/:search',
-      ...results
+      ...results,
+      children: [
+        {
+          path: ':search',
+          component: Results
+        }
+      ]
     },
     {
       path: '/popularity/:upvotes',

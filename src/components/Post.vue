@@ -8,7 +8,10 @@
     <div class="post_title">{{ details.meta.title }}</div>
     <div class="post_info">
       <span :class="`post_info_category label_${details.category}`">{{ details.category }}</span>
-      <a href="#">{{ details.meta.author }}</a>
+      <a href="#" class="post_info_author">
+        <img :src="picture" :alt="'Picture of' + details.meta.author">
+        <span>{{ details.meta.author }}</span>
+      </a>
       <span class="post_info_date">{{ details.created_at }}</span>
       <a href="#" class="post_info_comments"><i class="fa fa-comment"></i> {{ details.comments }} comments</a>
     </div>
@@ -18,7 +21,8 @@
 <script>
 export default {
   props: {
-    details: Object
+    details: Object,
+    picture: String
   }
 }
 </script>

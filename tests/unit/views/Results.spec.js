@@ -1,7 +1,10 @@
 import { expect } from 'chai'
 import { shallow } from '@vue/test-utils'
+import fetch from 'node-fetch'
 import apiLink from '@/commom/api-link'
 import Results from '@/views/Results.vue'
+
+global.fetch = fetch
 
 describe('views/Results.vue', () => {
   it('renders props.search when passed', () => {
@@ -17,9 +20,7 @@ describe('views/Results.vue', () => {
       path: '/results/text'
     }
     const wrapper = shallow(Results, {
-      mocks: {
-        $route
-      }
+      mocks: { $route }
     })
     expect(wrapper.vm.$route.path).to.equal($route.path)
   })

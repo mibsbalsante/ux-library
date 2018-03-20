@@ -1,6 +1,8 @@
 <template>
   <main>
-    <p v-if="filteredResults.length === 0" class="empty">Nothing found</p>
+    <p v-if="filteredResults.length === 0" class="empty">
+      Nothing found with <span class="term">{{ search }}</span>.
+    </p>
     <post v-if="filteredResults.length > 0"
           v-for="details in filteredResults"
           :key="details.meta.title"
@@ -81,3 +83,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .empty {
+    font-size: 1.8rem;
+
+    .term {
+      color: $primary;
+    }
+  }
+</style>

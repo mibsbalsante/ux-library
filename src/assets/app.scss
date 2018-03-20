@@ -15,13 +15,19 @@ body {
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  a {
-    color: $primary;
-  }
+a {
+  color: $primary;
 
-  a,
-  button {
-    outline: 0 none;
+  &:hover {
+    color: darken($primary, 10%);
   }
+}
+
+a,
+button {
+  outline: 0 none;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
 }

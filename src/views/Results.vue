@@ -85,6 +85,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  main {
+    margin-top: 4rem;
+  }
+
   .empty {
     font-size: 1.8rem;
 

@@ -13,7 +13,7 @@
         <span>{{ details.meta.author }}</span>
       </a>
       <span class="post_info_date">{{ details.created_at }}</span>
-      <a href="#" class="post_info_comments"><i class="fa fa-comment"></i>{{ details.comments }} wcomments</a>
+      <a href="#" class="post_info_comments"><i class="fa fa-comment"></i>{{ details.comments }} comments</a>
     </div>
   </div>
 </template>

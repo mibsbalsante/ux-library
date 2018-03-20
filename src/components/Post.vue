@@ -45,7 +45,7 @@ export default {
   grid-gap: 0 1.2rem;
 
   &:not(:first-child) {
-    padding-top: 3rem;
+    padding-top: 3.5rem;
   }
 
   &_upvotes {

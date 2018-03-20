@@ -37,12 +37,18 @@ export default {
     filterText (val) {
       this.searchText = undefined
       this.searchText = val.replace(/\/\\/g, '')
+    },
+    getSearchParam (route) {
+      this.searchText = route.params.search ? route.params.search : ''
     }
   },
   watch: {
     searchText (val) {
       this.$router.push(`/${val}`)
     }
+  },
+  mounted() {
+    this.getSearchParam(this.$route)
   }
 }
 </script>

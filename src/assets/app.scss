@@ -1,18 +1,27 @@
 @import 'settings';
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   border: 0 none;
   min-height: 100vh;
 }
+
 #app {
   font-family: 'Yantramanav', Helvetica, sans-serif;
   font-size: 15px;
+  line-height: 1.2em;
   color: $text;
-  max-width: 850px;
+  max-width: 920px;
   padding: 0 25px;
   margin: 0 auto;
+  cursor: default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

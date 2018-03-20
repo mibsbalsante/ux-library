@@ -7,7 +7,7 @@
     <a :href="details.meta.url" class="post_font">{{ details.meta.url }}</a>
     <div class="post_title">{{ details.meta.title }}</div>
     <div class="post_info">
-      <span :class="`post_info_category -${details.category}`">{{ details.category }}</span>
+      <a :class="`post_info_category -${details.category}`">{{ capitalizeName(details.category) }}</a>
       <a href="#" class="post_info_author">
         <img :src="picture" :alt="'Picture of' + details.meta.author">
         <span>{{ details.meta.author }}</span>
@@ -23,6 +23,17 @@ export default {
   props: {
     details: Object,
     picture: String
+  },
+  methods: {
+    capitalizeName (val) {
+      return val.split(/_/).map(word => {
+        return word.length < 3
+          ? word.toUpperCase()
+          : word.charAt(0)
+            .toUpperCase()
+            .concat(word.slice(1, word.length))
+      }).join(' ')
+    }
   }
 }
 </script>

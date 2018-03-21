@@ -18,9 +18,9 @@
     <div class="-right">
       <button class="header_addpost">
         <i class="fa fa-plus"></i>
-        <span>Add Post</span>
+        <span class="header_addpost_title">Add Post</span>
+        <span class="header_posts_counter">{{ totalOfResults }}</span>
       </button>
-      <span class="header_posts_counter">{{ totalOfResults }}</span>
       <div class="header_user_profile"></div>
     </div>
   </header>
@@ -154,6 +154,53 @@ export default {
         border-radius: 0 .2rem .2rem 0;
         min-width: 17rem;
       }
+    }
+
+    &_addpost {
+      background: $primary;
+      color: $white;
+      font-weight: 700;
+      border: 1px solid darken($primary, 10%);
+      display: flex;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      padding: 0;
+      border-radius: .2rem;
+      margin-right: 2rem;
+
+      &:hover {
+        > .fa-plus {
+          transition: all .3s ease-in-out;
+          background: darken($primary, 10%);
+        }
+      }
+
+      > .fa-plus {
+        padding: .7rem .9rem;
+        width: 2.8rem;
+        height: 2.5rem;
+        border-right: 1px solid darken($primary, 10%);
+      }
+
+      &_title {
+        padding: .6rem 1.2rem;
+        font-size: .9rem;
+      }
+    }
+
+    &_posts_counter {
+      background: $primary;
+      color: $white;
+      font-size: .8rem;
+      font-weight: 700;
+      padding: .2rem;
+      border-radius: .2rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -2rem;
+      min-width: 1.4rem;
     }
   }
 </style>

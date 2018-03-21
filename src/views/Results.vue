@@ -71,7 +71,10 @@ export default {
   },
   watch: {
     apiResults (val) {
-      if (val) this.getRandomPictures(val.length)
+      if (val) {
+        this.getRandomPictures(val.length)
+        this.$emit('totalOfResults', val.length)
+      }
     }
   },
   components: {

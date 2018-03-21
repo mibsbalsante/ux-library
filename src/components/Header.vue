@@ -20,7 +20,7 @@
         <i class="fa fa-plus"></i>
         <span>Add Post</span>
       </button>
-      <span class="header_posts_counter">n</span>
+      <span class="header_posts_counter">{{ totalOfResults }}</span>
       <div class="header_user_profile"></div>
     </div>
   </header>
@@ -28,6 +28,9 @@
 
 <script>
 export default {
+  props: {
+    totalOfResults: Number
+  },
   data () {
     return {
       searchText: ''

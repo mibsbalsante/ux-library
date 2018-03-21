@@ -20,9 +20,11 @@
       <button class="header_addpost">
         <i class="fa fa-plus"></i>
         <span class="header_addpost_title">Add Post</span>
-        <span class="header_posts_counter">{{ totalOfResults }}</span>
       </button>
-      <div class="header_user_profile"></div>
+      <a href="#" class="header_user">
+        <span class="header_posts_counter">{{ totalOfResults }}</span>
+        <img :src="exampleUser.pic" :alt="'Picture of ' + exampleUser.name">
+      </a>
     </div>
   </header>
 </template>
@@ -30,6 +32,7 @@
 <script>
 export default {
   props: {
+    exampleUser: Object,
     totalOfResults: Number
   },
   data () {
@@ -75,6 +78,7 @@ export default {
 
     .-right {
       margin-left: auto;
+      display: flex;
     }
 
     &_logo {
@@ -103,7 +107,7 @@ export default {
     &_hamburger {
       border: 1px solid $grey2;
       border-radius: .2rem;
-      padding: .7rem .6rem;
+      padding: .8rem .6rem;
       height: 2.8rem;
       transition: all .3s ease-in-out;
 
@@ -143,7 +147,7 @@ export default {
         }
 
         &:after {
-          top: .7rem;
+          top: .65rem;
         }
       }
     }
@@ -182,10 +186,9 @@ export default {
       display: flex;
       align-items: center;
       height: 100%;
-      position: relative;
       padding: 0;
       border-radius: .2rem;
-      margin-right: 2rem;
+      margin-right: 1.2rem;
 
       &:hover {
         > .fa-plus {
@@ -212,13 +215,23 @@ export default {
       color: $white;
       font-size: .8rem;
       font-weight: 700;
-      padding: .2rem;
       border-radius: .2rem;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: -2rem;
-      min-width: 1.4rem;
+      left: -.6rem;
+      min-width: 1.1rem;
+      text-align: center;
+    }
+
+    &_user {
+      height: 2.8rem;
+      position: relative;
+
+      > img {
+        height: 100%;
+        border-radius: .2rem;
+      }
     }
   }
 </style>

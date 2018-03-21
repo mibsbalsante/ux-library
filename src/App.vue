@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <comp-header :totalOfResults="totalOfResults"></comp-header>
-    <router-view @totalOfResults="getTotal"/>
+    <comp-header :exampleUser="exampleUser" :totalOfResults="totalOfResults"></comp-header>
+    <router-view @exampleUser="getExample" @totalOfResults="getTotal"/>
   </div>
 </template>
 
@@ -11,10 +11,14 @@ import Header from '@/components/Header.vue'
 export default {
   data () {
     return {
+      exampleUser: {},
       totalOfResults: 0
     }
   },
   methods: {
+    getExample (val) {
+      this.exampleUser = val
+    },
     getTotal (val) {
       this.totalOfResults = val
     }

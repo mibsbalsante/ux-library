@@ -88,6 +88,12 @@ export default {
         this.getRandomPictures(val.length)
         this.$emit('totalOfResults', val.length)
       }
+    },
+    usersData (val) {
+      if(val) {
+        const exampleUser = Object.keys(val)[0]
+        this.$emit('exampleUser', { name: exampleUser, pic: val[exampleUser] })
+      }
     }
   },
   components: {

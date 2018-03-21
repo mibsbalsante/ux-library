@@ -11,7 +11,7 @@
     <div class="post_info">
       <span :class="`post_info_category -${details.category}`">{{ capitalizeName(details.category) }}</span>
       <a href="#" class="post_info_author">
-        <img :src="picture" :alt="'Picture of' + details.meta.author">
+        <img :src="picture" :alt="'Picture of ' + details.meta.author">
         <span>{{ details.meta.author }}</span>
       </a>
       <span class="post_info_date" :title="details.created_at">{{ dateFromNow(details.created_at) }}</span>

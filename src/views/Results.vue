@@ -39,6 +39,9 @@ export default {
 
       return this.apiResults.filter(post => {
         return regex.test(post.category) ||
+                regex.test(post.comments) ||
+                regex.test(post.created_at) ||
+                regex.test(post.upvotes) ||
                 regex.test(post.meta.author) ||
                 regex.test(post.meta.title) ||
                 regex.test(post.meta.url)

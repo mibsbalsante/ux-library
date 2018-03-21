@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import apiLink from '@/commom/api-link'
 import picturesLink from '@/commom/pictures-link'
 import LoadMore from '@/components/LoadMore.vue'
@@ -67,11 +68,18 @@ export default {
       fetch(apiLink)
         .then(dt => dt.json())
         .then(json => { this.apiResults = json.links })
+    },
+    updateDate () {
+      this.apiResults.map(post => {
+        if(post.created_at)
+          post.created_at = moment(post.created_at).format('MM/DD/YYYY')
+      })
     }
   },
   watch: {
     apiResults (val) {
       if (val) {
+        this.updateDate()
         this.getRandomPictures(val.length)
         this.$emit('totalOfResults', val.length)
       }

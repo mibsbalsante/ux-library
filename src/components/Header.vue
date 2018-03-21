@@ -76,11 +76,6 @@ export default {
       border-bottom: 1px solid $grey1;
     }
 
-    .-right {
-      margin-left: auto;
-      display: flex;
-    }
-
     &_logo {
       margin-right: 1.2rem;
       padding-right: 1rem;
@@ -93,15 +88,7 @@ export default {
     }
 
     &_title {
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 1.2rem;
-      width: 2.3rem;
-      text-align: center;
-      margin: 0;
-      padding: .8rem 0;
-      color: $white;
+      @extend %logo-title;
     }
 
     &_hamburger {

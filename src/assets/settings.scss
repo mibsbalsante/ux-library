@@ -35,3 +35,15 @@ $tag-ux-ui: #00BBFF;
     transform: rotate(-60deg);
   }
 }
+
+%logo-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+  width: 2.3rem;
+  text-align: center;
+  margin: 0;
+  padding: .8rem 0;
+  color: $white;
+}

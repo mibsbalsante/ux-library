@@ -54,7 +54,7 @@ export default {
       this.$router.push(`/${val}`)
     }
   },
-  mounted() {
+  mounted () {
     this.getSearchParam(this.$route)
   }
 }

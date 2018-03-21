@@ -76,8 +76,7 @@ export default {
     },
     updateDate () {
       this.apiResults.map(post => {
-        if(post.created_at)
-          post.created_at = moment(post.created_at).format('MM/DD/YYYY')
+        if (post.created_at) post.created_at = moment(post.created_at).format('MM/DD/YYYY')
       })
     }
   },
@@ -90,7 +89,7 @@ export default {
       }
     },
     usersData (val) {
-      if(val) {
+      if (val) {
         const exampleUser = Object.keys(val)[0]
         this.$emit('exampleUser', { name: exampleUser, pic: val[exampleUser] })
       }

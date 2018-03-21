@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isActive: false,
       timer: 3000
@@ -23,7 +23,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
   .load {

@@ -42,3 +42,12 @@ button {
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
+
+.transition-enter-active,
+.transition-leave-active {
+  transition: opacity .3s linear;
+}
+.transition-enter,
+.transition-leave-to {
+  opacity: 0;
+}

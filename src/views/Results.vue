@@ -3,12 +3,14 @@
     <p v-if="filteredResults.length === 0" class="empty">
       Nothing found with <span class="term">{{ search }}</span>.
     </p>
-    <post v-if="filteredResults.length > 0"
-          v-for="details in filteredResults"
-          :key="details.meta.title"
-          :details="details"
-          :picture="usersData[details.meta.author]">
-    </post>
+    <transition-group name="transition" tag="div">
+      <post v-if="filteredResults.length > 0"
+            v-for="details in filteredResults"
+            :key="details.meta.title"
+            :details="details"
+            :picture="usersData[details.meta.author]">
+      </post>
+    </transition-group>
     <load-more v-if="filteredResults.length > 0"></load-more>
   </main>
 </template>

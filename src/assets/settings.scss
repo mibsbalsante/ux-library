@@ -9,3 +9,29 @@ $tag-case-study: #F4973C;
 $tag-discussion: #4271D6;
 $tag-product-design: #00E2AD;
 $tag-ux-ui: #00BBFF;
+
+%logo {
+  position: relative;
+  width: 2.3rem; height: 2.7rem;
+  border-radius: 1rem/ 2rem;
+  background: $primary;
+  transition: opacity .5s;
+  transform: rotate(90deg);
+  display: block;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+  }
+  &:before {
+    transform: rotate(60deg);
+  }
+  &:after {
+    transform: rotate(-60deg);
+  }
+}

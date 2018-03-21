@@ -1,8 +1,9 @@
 <template>
   <header class="header">
-    <h1 class="header_logo">
-      logo
-    </h1>
+    <router-link to="/" class="header_logo">
+      <span class="header_hexagon"></span>
+      <h1 class="header_title">UX</h1>
+    </router-link>
     <div class="header_hamburger">
       <span class="line"></span>
     </div>
@@ -80,13 +81,30 @@ export default {
       margin-right: 1.2rem;
       padding-right: 1rem;
       border-right: 1px solid $grey1;
+      position: relative;
+    }
+
+    &_hexagon {
+      @extend %logo;
+    }
+
+    &_title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.2rem;
+      width: 2.3rem;
+      text-align: center;
+      margin: 0;
+      padding: .8rem 0;
+      color: $white;
     }
 
     &_hamburger {
       border: 1px solid $grey2;
       border-radius: .2rem;
       padding: .7rem .6rem;
-      height: 2.6rem;
+      height: 2.8rem;
       transition: all .3s ease-in-out;
 
       &:hover {
@@ -121,11 +139,11 @@ export default {
         }
 
         &:before {
-          top: .15rem;
+          top: .2rem;
         }
 
         &:after {
-          top: .5rem;
+          top: .7rem;
         }
       }
     }
@@ -179,7 +197,7 @@ export default {
       > .fa-plus {
         padding: .7rem .9rem;
         width: 2.8rem;
-        height: 2.5rem;
+        height: 2.6rem;
         border-right: 1px solid darken($primary, 10%);
       }
 

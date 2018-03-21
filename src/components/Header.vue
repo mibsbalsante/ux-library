@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header">
     <h1 class="header_logo">
       logo
     </h1>
@@ -15,7 +15,7 @@
               :value="searchText"
               @input="filterText($event.target.value)">
     </div>
-    <div class="header_user">
+    <div class="-right">
       <button class="header_addpost">
         <i class="fa fa-plus"></i>
         <span>Add Post</span>
@@ -55,3 +55,105 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem 0;
+
+    &:after {
+      content: '';
+      width: 200%;
+      position: absolute;
+      left: -50%;
+      bottom: 0;
+      border-bottom: 1px solid $grey1;
+    }
+
+    .-right {
+      margin-left: auto;
+    }
+
+    &_logo {
+      margin-right: 1.2rem;
+      padding-right: 1rem;
+      border-right: 1px solid $grey1;
+    }
+
+    &_hamburger {
+      border: 1px solid $grey2;
+      border-radius: .2rem;
+      padding: .7rem .6rem;
+      height: 2.6rem;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        background: $text;
+        border-color: $text;
+
+        > .line {
+           &,
+          &:before,
+          &:after {
+            border-color: $white;
+          }
+        }
+      }
+
+      > .line {
+        position: relative;
+        display: block;
+
+        &,
+        &:before,
+        &:after {
+          width: 1.2rem;
+          border-top: .3rem solid $text;
+          transition: all .3s ease-in-out;
+        }
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+        }
+
+        &:before {
+          top: .15rem;
+        }
+
+        &:after {
+          top: .5rem;
+        }
+      }
+    }
+
+    &_search {
+      margin-left: 1rem;
+      display: flex;
+      align-items: stretch;
+
+      &_button,
+      &_input {
+        background: $grey1;
+        border: 0 none;
+        outline: 0 none;
+      }
+
+      &_button {
+        color: $grey2;
+        font-size: 1rem;
+        padding: .8rem;
+        border-radius: .2rem 0 0 .2rem;
+      }
+
+      &_input {
+        padding: .9rem 1.5rem .9rem .5rem;
+        border-radius: 0 .2rem .2rem 0;
+        min-width: 17rem;
+      }
+    }
+  }
+</style>

@@ -4,7 +4,9 @@
       <button><i class="fa fa-angle-up"></i></button>
       <div class="post_upvotes_amount">{{ details.upvotes }}</div>
     </div>
-    <a :href="`http://${details.meta.url}`" class="post_font">{{ details.meta.url }}</a>
+    <span class="-cell">
+      <a :href="`http://${details.meta.url}`" class="post_font">{{ details.meta.url }}</a>
+    </span>
     <h2 class="post_title">{{ details.meta.title }}</h2>
     <div class="post_info">
       <span :class="`post_info_category -${details.category}`">{{ capitalizeName(details.category) }}</span>
@@ -12,13 +14,14 @@
         <img :src="picture" :alt="'Picture of' + details.meta.author">
         <span>{{ details.meta.author }}</span>
       </a>
-      <span class="post_info_date">{{ details.created_at }}</span>
+      <span class="post_info_date" :title="details.created_at">{{ dateFromNow(details.created_at) }}</span>
       <a href="#" class="post_info_comments"><i class="fa fa-comment"></i>{{ details.comments }} Comments</a>
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   props: {
     details: Object,
@@ -33,6 +36,9 @@ export default {
             .toUpperCase()
             .concat(word.slice(1, word.length))
       }).join(' ')
+    },
+    dateFromNow (val) {
+      return val ? moment(val, 'MM/DD/YYYY').fromNow() : moment().fromNow()
     }
   }
 }
@@ -46,6 +52,10 @@ export default {
 
   &:not(:first-child) {
     padding-top: 3.5rem;
+  }
+
+  .-cell {
+    display: contents;
   }
 
   &_upvotes {

@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
   .load {
-    background: lighten($grey1, 5%);
+    background: $grey1;
     color: $primary;
     font-size: 1.2rem;
     padding: 1.5rem 0;

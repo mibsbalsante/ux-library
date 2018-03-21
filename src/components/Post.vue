@@ -13,7 +13,7 @@
         <span>{{ details.meta.author }}</span>
       </a>
       <span class="post_info_date">{{ details.created_at }}</span>
-      <a href="#" class="post_info_comments"><i class="fa fa-comment"></i>{{ details.comments }} comments</a>
+      <a href="#" class="post_info_comments"><i class="fa fa-comment"></i>{{ details.comments }} Comments</a>
     </div>
   </div>
 </template>
@@ -102,7 +102,6 @@ export default {
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;
-    font-weight: 300;
 
     &_category {
       padding: .2rem .6rem;
@@ -132,6 +131,7 @@ export default {
       display: flex;
       align-items: center;
       border-left: 1px solid $grey2;
+      font-weight: 700;
 
       > img {
         margin-right: .5rem;

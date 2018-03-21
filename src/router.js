@@ -23,18 +23,6 @@ export default new Router({
       ]
     },
     {
-      path: '/popularity/:upvotes',
-      ...results
-    },
-    {
-      path: '/date/:created_at',
-      ...results
-    },
-    {
-      path: '/comments/:comments',
-      ...results
-    },
-    {
       path: '*',
       redirect: '/'
     }

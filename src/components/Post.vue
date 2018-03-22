@@ -91,7 +91,6 @@ export default {
   }
 
   &_font {
-    margin: 0;
     color: $grey2;
     text-decoration: none;
     text-transform: uppercase;

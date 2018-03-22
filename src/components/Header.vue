@@ -77,7 +77,7 @@ export default {
     }
 
     &_logo {
-      margin-right: 1.2rem;
+      margin-right: 1rem;
       padding-right: 1rem;
       border-right: 1px solid $grey1;
       position: relative;
@@ -94,8 +94,8 @@ export default {
     &_hamburger {
       border: 1px solid $grey2;
       border-radius: .2rem;
-      padding: .8rem .6rem;
-      height: 2.8rem;
+      padding: .75rem;
+      height: 2.6rem;
       transition: all .3s ease-in-out;
 
       &:hover {
@@ -118,7 +118,7 @@ export default {
         &,
         &:before,
         &:after {
-          width: 1.2rem;
+          width: 1.1rem;
           border-top: .3rem solid $text;
           transition: all .3s ease-in-out;
         }
@@ -130,11 +130,11 @@ export default {
         }
 
         &:before {
-          top: .2rem;
+          top: .1rem;
         }
 
         &:after {
-          top: .65rem;
+          top: .5rem;
         }
       }
     }
@@ -154,12 +154,12 @@ export default {
       &_button {
         color: $grey2;
         font-size: 1rem;
-        padding: .8rem;
+        padding: .7rem;
         border-radius: .2rem 0 0 .2rem;
       }
 
       &_input {
-        padding: .9rem 1.5rem .9rem .5rem;
+        padding: .8rem 1.5rem .8rem .5rem;
         border-radius: 0 .2rem .2rem 0;
         min-width: 17rem;
       }
@@ -185,14 +185,14 @@ export default {
       }
 
       > .fa-plus {
-        padding: .7rem .9rem;
-        width: 2.8rem;
-        height: 2.6rem;
+        padding: .7rem .7rem;
+        width: 2.5rem;
+        height: 2.5rem;
         border-right: 1px solid darken($primary, 10%);
       }
 
       &_title {
-        padding: .6rem 1.2rem;
+        padding: .6rem 1rem;
         font-size: .9rem;
       }
     }
@@ -212,7 +212,7 @@ export default {
     }
 
     &_user {
-      height: 2.8rem;
+      height: 2.6rem;
       position: relative;
 
       > img {

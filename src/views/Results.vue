@@ -112,6 +112,7 @@ export default {
 
   .empty {
     font-size: 1.8rem;
+    margin-bottom: 4rem;
 
     .term {
       color: $primary;

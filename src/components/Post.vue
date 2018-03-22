@@ -50,6 +50,10 @@ export default {
   grid-template-columns: 3rem 1fr;
   grid-gap: 0 1.2rem;
 
+  &:last-child {
+    margin-bottom: 4rem;
+  }
+
   &:not(:first-child) {
     padding-top: 3.5rem;
   }
@@ -162,7 +166,7 @@ export default {
       &:before {
         content: '●';
         color: darken($lighter-text, 10%);
-        font-size: .7rem;
+        font-size: .6rem;
         position: absolute;
         left: 0;
       }

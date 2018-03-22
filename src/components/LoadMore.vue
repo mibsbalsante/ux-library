@@ -31,7 +31,6 @@ export default {
     font-size: 1.2rem;
     padding: 1.5rem 0;
     border-radius: .2rem;
-    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;

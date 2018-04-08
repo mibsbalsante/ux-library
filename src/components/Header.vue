@@ -227,10 +227,10 @@ export default {
   @media (min-width: $break-mobile) {
     .header {
       grid-template-columns: 4.8rem 2.8rem 1fr 18rem;
-    }
 
-    &_search {
-      margin-left: 1rem
+      &_search {
+        margin-left: 1rem
+      }
     }
   }
 

@@ -29,7 +29,7 @@
   .footer {
     display: grid;
     grid-gap: 1rem;
-    margin: 1rem 0 4rem;
+    margin: 1rem 0;
 
     a {
       text-decoration: none;

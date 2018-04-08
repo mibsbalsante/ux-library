@@ -119,10 +119,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  main {
-    min-height: 50vh;
-  }
-
   .loading,
   .empty {
     font-size: 1.8rem;
@@ -145,6 +141,7 @@ export default {
   @media (min-width: $break-mobile) {
     main {
       margin-top: 9.6rem;
+      min-height: 50vh;
     }
 
     .loading,
@@ -156,6 +153,7 @@ export default {
   @media (max-width: $break-mobile - 1) {
     main {
       margin-top: 11.2rem;
+      min-height: 38vh;
     }
   }
 

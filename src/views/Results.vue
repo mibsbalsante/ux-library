@@ -106,10 +106,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  main {
+    min-height: 50vh;
+  }
+
+  .loading,
   .empty {
     font-size: 1.8rem;
     margin-bottom: 4rem;
+  }
 
+  .empty {
     .term {
       color: $primary;
     }

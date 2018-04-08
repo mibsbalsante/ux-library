@@ -13,6 +13,9 @@ $tag-ux-ui: #00BBFF;
 $link-facebook: #3D599B;
 $link-twitter: #00ABEE;
 
+$break-mobile: 768px;
+$break-mini: 400px;
+
 @mixin center-fixed ($top-bottom-padding: 0) {
   max-width: 920px;
   padding: $top-bottom-padding 1.6rem;

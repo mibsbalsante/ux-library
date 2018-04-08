@@ -71,7 +71,6 @@ export default {
     width: 100%;
     z-index: 1;
     display: grid;
-    grid-template-columns: 4.8rem 2.8rem 1fr 14rem;
     align-items: center;
 
     &:after {
@@ -147,7 +146,6 @@ export default {
     }
 
     &_search {
-      margin-left: 1rem;
       display: flex;
       align-items: stretch;
 
@@ -168,7 +166,6 @@ export default {
       &_input {
         padding: .8rem 1.5rem .8rem .5rem;
         border-radius: 0 .2rem .2rem 0;
-        min-width: 17rem;
       }
     }
 
@@ -195,7 +192,6 @@ export default {
         padding: .7rem .7rem;
         width: 2.5rem;
         height: 2.5rem;
-        border-right: 1px solid darken($primary, 10%);
       }
 
       &_title {
@@ -225,6 +221,55 @@ export default {
       > img {
         height: 100%;
         border-radius: .2rem;
+      }
+    }
+  }
+
+  @media (min-width: $break-mobile) {
+    .header {
+      grid-template-columns: 4.8rem 2.8rem 1fr 14rem;
+    }
+
+    &_search {
+      margin-left: 1rem
+    }
+  }
+
+  @media (max-width: $break-mobile - 1) {
+    .header {
+      grid-template-columns: 4.8rem 2.8rem 1fr;
+      grid-gap: 1rem 0;
+
+      &_search {
+        grid-row-start: 2;
+        grid-column: 1 / 4;
+
+        &_input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $break-mini) {
+    .header {
+      &_search_input {
+        min-width: 17rem;
+      }
+      &_addpost {
+        .fa-plus {
+          border-right: 1px solid darken($primary, 10%);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $break-mini - 1) {
+    .header {
+      &_addpost {
+        &_title {
+          display: none;
+        }
       }
     }
   }

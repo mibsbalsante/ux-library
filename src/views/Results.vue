@@ -106,16 +106,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  main {
-    margin-top: 9.6rem;
-  }
-
   .empty {
     font-size: 1.8rem;
     margin-bottom: 4rem;
 
     .term {
       color: $primary;
+    }
+  }
+
+  @media (min-width: $break-mobile) {
+    main {
+      margin-top: 9.6rem;
+    }
+  }
+
+  @media (max-width: $break-mobile - 1) {
+    main {
+      margin-top: 11.2rem;
     }
   }
 </style>

@@ -8,7 +8,7 @@
       <h3>The UX Library</h3>
       <p>Community curated design content & discussion</p>
     </div>
-    <div class="footer_about -right">
+    <div class="footer_about">
       <div class="footer_institutional">
         <a class="footer_link -sn -facebook" href="#">
           <i class="fab fa-facebook"></i> Facebook
@@ -27,7 +27,8 @@
 
 <style lang="scss" scoped>
   .footer {
-    display: flex;
+    display: grid;
+    grid-gap: 1rem;
     margin: 1rem 0 4rem;
 
     a {
@@ -50,7 +51,6 @@
       display: flex;
       flex-flow: column;
       justify-content: center;
-      padding: 0 1rem;
 
       h3 {
         padding-top: .2rem;
@@ -112,6 +112,28 @@
       width: 100%;
       color: $grey2;
       text-align: right;
+    }
+  }
+
+  @media (min-width: $break-mobile) {
+    .footer {
+      grid-template-columns: 2.8rem 1fr 20rem;
+    }
+  }
+
+  @media (max-width: $break-mobile - 1) {
+    .footer {
+      grid-template-columns: 2.8rem 1fr;
+
+      &_about {
+        grid-row-start: 2;
+        grid-column: 1 / 3;
+      }
+
+      &_institutional {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
     }
   }
 </style>

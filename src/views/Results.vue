@@ -1,17 +1,20 @@
 <template>
   <main>
-    <p v-if="filteredResults.length === 0" class="empty">
+    <p v-if="isLoading" class="loading">
+      Loading results <span class="loading_dots"></span>
+    </p>
+    <p v-else-if="filteredResults.length === 0" class="empty">
       Nothing found with <span class="term">{{ search }}</span>.
     </p>
     <transition-group name="transition" tag="div">
-      <post v-if="filteredResults.length > 0"
+      <post v-if="!isLoading && filteredResults.length > 0"
             v-for="details in filteredResults"
             :key="details.meta.title"
             :details="details"
             :picture="usersData[details.meta.author]">
       </post>
     </transition-group>
-    <load-more v-if="filteredResults.length > 0"></load-more>
+    <load-more v-if="!isLoading && filteredResults.length > 0"></load-more>
   </main>
 </template>
 
@@ -29,7 +32,8 @@ export default {
       apiLink: apiLink,
       apiResults: [],
       inputText: '',
-      usersData: {}
+      usersData: {},
+      isLoading: false
     }
   },
   computed: {
@@ -65,14 +69,23 @@ export default {
       }, {})
     },
     getRandomPictures (count) {
+      this.isLoading = true
+
       fetch(picturesLink(count))
         .then(dt => dt.json())
         .then(json => this.generateUsersData(json.results))
+        .finally(() => this.removeLoading())
     },
     getResultsFromApi () {
+      this.isLoading = true
+
       fetch(apiLink)
         .then(dt => dt.json())
         .then(json => { this.apiResults = json.links })
+        .finally(() => this.removeLoading())
+    },
+    removeLoading() {
+      setTimeout(() => this.isLoading = false, 2000)
     },
     updateDate () {
       this.apiResults.map(post => {
@@ -116,6 +129,13 @@ export default {
     margin-bottom: 4rem;
   }
 
+  .loading {
+    &_dots:before {
+      content: '';
+      animation: 2s dots infinite;
+    }
+  }
+
   .empty {
     .term {
       color: $primary;
@@ -126,11 +146,31 @@ export default {
     main {
       margin-top: 9.6rem;
     }
+
+    .loading,
+    .empty {
+      padding: 2rem 4rem 0;
+    }
   }
 
   @media (max-width: $break-mobile - 1) {
     main {
       margin-top: 11.2rem;
+    }
+  }
+
+  @keyframes dots {
+    0% {
+      content: '.'
+    }
+    33% {
+      content: '..'
+    }
+    66% {
+      content: '...'
+    }
+    100% {
+      content: '.'
     }
   }
 </style>

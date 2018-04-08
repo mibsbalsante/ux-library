@@ -84,8 +84,8 @@ export default {
         .then(json => { this.apiResults = json.links })
         .finally(() => this.removeLoading())
     },
-    removeLoading() {
-      setTimeout(() => this.isLoading = false, 2000)
+    removeLoading () {
+      setTimeout(() => { this.isLoading = false }, 2000)
     },
     updateDate () {
       this.apiResults.map(post => {

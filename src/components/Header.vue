@@ -62,10 +62,17 @@ export default {
 
 <style lang="scss" scoped>
   .header {
-    display: flex;
+    @include center-fixed(1.5rem);
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 4.8rem 2.8rem 1fr 14rem;
     align-items: center;
-    position: relative;
-    padding: 1.5rem 0;
 
     &:after {
       content: '';

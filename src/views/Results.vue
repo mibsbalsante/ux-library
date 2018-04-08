@@ -107,7 +107,7 @@ export default {
 
 <style lang="scss" scoped>
   main {
-    margin-top: 4rem;
+    margin-top: 9.6rem;
   }
 
   .empty {

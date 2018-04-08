@@ -68,7 +68,6 @@ export default {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
     z-index: 1;
     display: grid;
     align-items: center;
@@ -227,7 +226,7 @@ export default {
 
   @media (min-width: $break-mobile) {
     .header {
-      grid-template-columns: 4.8rem 2.8rem 1fr 14rem;
+      grid-template-columns: 4.8rem 2.8rem 1fr 18rem;
     }
 
     &_search {

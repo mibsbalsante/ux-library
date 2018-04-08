@@ -17,6 +17,7 @@ $break-mobile: 768px;
 $break-mini: 400px;
 
 @mixin center-fixed ($top-bottom-padding: 0) {
+  width: 100%;
   max-width: 920px;
   padding: $top-bottom-padding 1.6rem;
   margin: 0 auto;

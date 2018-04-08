@@ -28,6 +28,7 @@ $link-twitter: #00ABEE;
   transition: opacity .5s;
   transform: rotate(90deg);
   display: block;
+  margin-left: .3rem;
 
   &:before,
   &:after {
@@ -51,7 +52,7 @@ $link-twitter: #00ABEE;
   top: 0;
   left: 0;
   font-size: 1rem;
-  width: 2.1rem;
+  width: 2.6rem;
   text-align: center;
   padding: .7rem 0;
   color: $white;

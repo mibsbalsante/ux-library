@@ -9,7 +9,7 @@
     </span>
     <h2 class="post_title">{{ details.meta.title }}</h2>
     <div class="post_info">
-      <span :class="`post_info_category -${details.category}`">{{ capitalizeName(details.category) }}</span>
+      <span :class="`post_info_category -${details.category.toLowerCase().split(/[\s\/]/g).join('_')}`">{{ capitalizeName(details.category) }}</span>
       <a href="#" class="post_info_author">
         <img :src="picture" :alt="'Picture of ' + details.meta.author">
         <span>{{ details.meta.author }}</span>
